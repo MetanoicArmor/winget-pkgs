@@ -29,6 +29,26 @@
 # fabricbot
 "(?:body|comment)Pattern": ".*"
 
+# Ignore policy regex patterns
+^\s*pattern:\s*'.*'$
+
+# Example repo paths in fenced code blocks and inline docs
+^\s*(?:manifests|doc|schemas|Tools)/(?:[-A-Za-z0-9_.<>*]+/?)+\s*$
+`(?:manifests|doc|schemas|Tools)/(?:[-A-Za-z0-9_.<>*]+/?)+`
+
+# Example filesystem paths in docs
+\b[A-Za-z]:\\(?:[-A-Za-z0-9_. <>]+\\)*[-A-Za-z0-9_. <>]+
+%[A-Za-z_]+%\\(?:[-A-Za-z0-9_. <>]+\\)*[-A-Za-z0-9_. <>]+
+/home/<[A-Za-z0-9_-]+>/(?:[-A-Za-z0-9_./<>]+)
+\\sources\b
+
+# Example PowerShell invocations and installer switches
+(?:^|[\s`])\.[\\/][-A-Za-z0-9_.]+\.ps1\b(?:[^\n`]*)?
+/(?:S|silent|quiet)\b
+
+# Angle-bracket placeholders used in docs
+<[A-Za-z0-9][A-Za-z0-9 /._-]*>
+
 # Moderators
 \*\*\s*\[@[^\]]+\]\([^)]+\)\*\*
 

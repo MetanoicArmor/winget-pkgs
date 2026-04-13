@@ -2,7 +2,6 @@ automerge
 cspell
 denelon
 Icm
-LOCALAPPDATA
+img
 misclicks
 stephengillie
-img

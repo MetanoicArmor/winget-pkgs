@@ -1,6 +1,6 @@
-# Using Build-MinWin11.ps1
+# Using Build-MinWinVHD.ps1
 
-The [Build-MinWinVHD.ps1](Tools/Build-MinWinVHD.ps1) script creates a new `V`irtual `H`ard `D`isk (VHD) using a mounted Windows ISO for use with a virtual machine. This image will have as few dependencies and apps enabled as possible, to provide the best approximation of the images uses by the validation pipelines. Although this is not the same image, it should be close enough to use for testing manifests for those who are unable to use Windows Sandbox and [SandboxTest.ps1](doc/tools/SandboxTest.ps1).
+The [Build-MinWinVHD.ps1](../../Tools/Build-MinWinVHD.ps1) script creates a new `V`irtual `H`ard `D`isk (VHD) using a mounted Windows ISO for use with a virtual machine. This image will have as few dependencies and apps enabled as possible, to provide the best approximation of the images used by the validation pipelines. Although this is not the same image, it should be close enough to use for testing manifests for those who are unable to use Windows Sandbox and [SandboxTest.ps1](../../Tools/SandboxTest.ps1).
 
 ## Summary
 
@@ -50,10 +50,10 @@ Open an elevated PowerShell prompt and run (example values shown):
 cd <path-to-repo>\Tools
 
 # Basic: create a 25GB dynamic VHDX from the image at D:, using index 1
-.\Build-MinWin11.ps1 -IsoDrive D: -ImageIndex 1 -VhdPath C:\MinWin11.vhdx
+.\Build-MinWinVHD.ps1 -IsoDrive D: -ImageIndex 1 -VhdPath C:\MinWin11.vhdx
 
 # With custom size and VM name
-.\Build-MinWin11.ps1 -IsoDrive D: -ImageIndex 2 -VhdPath C:\MinWin11.vhdx -VhdSizeGB 40 -VmName "MyMinWin11"
+.\Build-MinWinVHD.ps1 -IsoDrive D: -ImageIndex 2 -VhdPath C:\MinWin11.vhdx -VhdSizeGB 40 -VmName "MyMinWin11"
 ```
 
 ## What the script does (high level)
